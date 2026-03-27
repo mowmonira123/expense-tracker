@@ -21,3 +21,19 @@ def get_expenses():
                 "category": category
             })
     return expenses
+
+def get_summary():
+    expenses = get_expenses()
+    total = 0
+    categories = {}
+
+    for e in expenses:
+        total += e["amount"]
+        cat = e["category"]
+
+        if cat not in categories:
+            categories[cat] = 0
+
+        categories[cat] += e["amount"]
+
+    return total, categories
