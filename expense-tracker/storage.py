@@ -22,6 +22,7 @@ def get_expenses():
             })
     return expenses
 
+
 def get_summary():
     expenses = get_expenses()
     total = 0
@@ -37,6 +38,7 @@ def get_summary():
         categories[cat] += e["amount"]
 
     return total, categories
+
 
 def remove_expense(index):
     expenses = get_expenses()
@@ -54,9 +56,13 @@ def remove_expense(index):
 
     return True
 
+
+
 def set_limit(amount):
     with open(LIMIT_FILE, "w") as f:
         f.write(str(amount))
+
+
 
 def get_limit():
     if not os.path.exists(LIMIT_FILE):
@@ -64,3 +70,9 @@ def get_limit():
     with open(LIMIT_FILE, "r") as f:
         return float(f.read())
 
+
+
+def reset_expenses():
+    if os.path.exists(FILE_NAME):
+        os.remove(FILE_NAME)
+    
