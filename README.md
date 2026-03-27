@@ -15,6 +15,10 @@ A simple command-line tool to track personal expenses.
 
 ## Installation
 pip install -e 
+pip install matplotlib
 
 ## Usage
 python -m expense-tracker
+
+## How to open and run
+download and unzip the file -> open cmd file the first folder -> follow installation command one by one -> follow useage command 
