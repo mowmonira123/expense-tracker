@@ -36,3 +36,74 @@ def print_menu():
     print("8. Reset all expenses")
     print("9. Exit")
 
+def main():
+    while True:
+        print_menu()
+        choice = input(Colors.BLUE + "Choose an option: " + Colors.END)
+
+        if choice == "1":
+            try:
+                amount = float(input("Amount (€): "))
+                category = input("Category: ")
+                add_expense(amount, category)
+                print(Colors.GREEN + "Expense added!" + Colors.END)
+            except ValueError:
+                print(Colors.RED + "Invalid amount!" + Colors.END)
+
+        elif choice == "2":
+            expenses = get_expenses()
+            if not expenses:
+                print(Colors.WARNING + "No expenses found." + Colors.END)
+            else:
+                print("\nAll Expenses:")
+                for e in expenses:
+                    print(f"{e['amount']}€ - {e['category']}")
+
+        elif choice == "3":
+            total, categories = get_summary()
+            print(Colors.GREEN + f"\nTotal spent: {total}€" + Colors.END)
+            print("By category:")
+            for cat, amt in categories.items():
+                print(f"{cat}: {amt}€")
+
+        elif choice == "4":
+            plot_expenses()
+
+        elif choice == "5":
+            limit = get_limit()
+            total, _ = get_summary()
+
+            if limit is None:
+                print(Colors.WARNING + "No limit set yet." + Colors.END)
+            else:
+                remaining = limit - total
+                print(Colors.GREEN + f"Limit: {limit}€" + Colors.END)
+                print(Colors.GREEN + f"Spent: {total}€" + Colors.END)
+                print(Colors.GREEN + f"Remaining: {remaining}€" + Colors.END)
+                if remaining < 0:
+                    print(Colors.RED + "Warning: You exceeded your budget!" + Colors.END)
+
+
+        elif choice == "6":
+           try:
+              limit = float(input("Enter monthly limit (€): "))
+              set_limit(limit)
+              print("Limit saved!")
+           except ValueError:
+              print(Colors.RED + "Invalid amount!" + Colors.END)
+
+                       
+        
+        elif choice == "8":
+            confirm = input("Are you sure you want to delete all expenses? (y/n): ")
+            if confirm.lower() == "y":
+                reset_expenses()
+                print("All expenses reset!")
+            else:
+                print(Colors.WARNING + "Cancelled." + Colors.END)
+                
+        elif choice == "9":
+            print("Goodbye!")
+            break
+        else:
+            print(Colors.RED + "Invalid choice!" + Colors.END)
