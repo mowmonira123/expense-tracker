@@ -8,3 +8,5 @@ def plot_expenses():
     if not categories:
         print("No data to display.")
         return
+    labels = list(categories.keys())
+    values = list(categories.values())
