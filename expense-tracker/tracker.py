@@ -92,7 +92,28 @@ def main():
            except ValueError:
               print(Colors.RED + "Invalid amount!" + Colors.END)
 
-                       
+        
+        elif choice == "7":
+            expenses = get_expenses()
+
+            if not expenses:
+                print("No expenses to remove.")
+                continue
+
+            print("\nSelect expense to remove:")
+            for i, e in enumerate(expenses):
+                print(f"{i + 1}. {e['amount']}€ - {e['category']}")
+
+            try:
+                index = int(input("Enter number: ")) - 1
+                if remove_expense(index):
+                    print(Colors.GREEN + "Expense removed!" + Colors.END)
+                else:
+                    print(Colors.RED + "Invalid selection!" + Colors.END)
+            except ValueError:
+                print(Colors.RED + "Please enter a number!" + Colors.END)
+
+            
         
         elif choice == "8":
             confirm = input("Are you sure you want to delete all expenses? (y/n): ")
