@@ -23,3 +23,16 @@ class Colors:
     WARNING = "\033[93m" if USE_COLORS else ""
     RED = "\033[91m" if USE_COLORS else ""
     END = "\033[0m" if USE_COLORS else ""
+    
+def print_menu():
+    print("\n=== $$$ Expense Tracker $$$===")
+    print("1. Add expense")
+    print("2. Show all expenses")
+    print("3. Show summary")
+    print("4. Show graph")
+    print("5. Show remaining budget")
+    print("6. Set/Update monthly limit")
+    print("7. Remove expense")
+    print("8. Reset all expenses")
+    print("9. Exit")
+
