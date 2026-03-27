@@ -58,3 +58,9 @@ def set_limit(amount):
     with open(LIMIT_FILE, "w") as f:
         f.write(str(amount))
 
+def get_limit():
+    if not os.path.exists(LIMIT_FILE):
+        return None
+    with open(LIMIT_FILE, "r") as f:
+        return float(f.read())
+
