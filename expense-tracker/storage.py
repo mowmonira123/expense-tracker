@@ -54,3 +54,7 @@ def remove_expense(index):
 
     return True
 
+def set_limit(amount):
+    with open(LIMIT_FILE, "w") as f:
+        f.write(str(amount))
+
