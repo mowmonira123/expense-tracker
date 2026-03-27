@@ -37,3 +37,20 @@ def get_summary():
         categories[cat] += e["amount"]
 
     return total, categories
+
+def remove_expense(index):
+    expenses = get_expenses()
+
+    if index < 0 or index >= len(expenses):
+        return False
+
+    # Remove selected expense
+    expenses.pop(index)
+
+    # Rewrite file
+    with open(FILE_NAME, "w") as f:
+        for e in expenses:
+            f.write(f"{e['amount']},{e['category']}\n")
+
+    return True
+
