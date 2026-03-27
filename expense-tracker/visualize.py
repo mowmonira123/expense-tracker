@@ -12,3 +12,4 @@ def plot_expenses():
     values = list(categories.values())
     
     plt.figure()
+    plt.bar(labels, values)
