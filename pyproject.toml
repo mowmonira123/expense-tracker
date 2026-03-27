@@ -1,0 +1,12 @@
+[project]
+name = "expense_tracker"
+version = "0.1.0"
+description = "expense tracker with visualization"
+authors = [{name = "Kamarum Monira Mow"}]
+dependencies = [
+    "matplotlib"
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
