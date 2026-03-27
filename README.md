@@ -22,4 +22,4 @@ pip install matplotlib
 python -m expense-tracker
 
 ## How to open and run
-download and unzip the file -> open cmd file the first folder -> follow installation command one by one -> follow useage command 
+Download and unzip the file -> open the CMD file in the first folder -> follow the installation commands one by one -> follow the usage command 
