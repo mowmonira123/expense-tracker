@@ -15,6 +15,7 @@ A simple command-line tool to track personal expenses.
 
 ## Installation
 pip install -e 
+
 pip install matplotlib
 
 ## Usage
