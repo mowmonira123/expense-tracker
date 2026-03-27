@@ -16,3 +16,5 @@ def plot_expenses():
     plt.title("Expenses by Category")
     plt.xlabel("Category")
     plt.ylabel("Amount (€)")
+    plt.tight_layout()
+    plt.show()
