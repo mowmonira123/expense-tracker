@@ -10,3 +10,5 @@ def plot_expenses():
         return
     labels = list(categories.keys())
     values = list(categories.values())
+    
+    plt.figure()
