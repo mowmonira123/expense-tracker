@@ -17,4 +17,4 @@ A simple command-line tool to track personal expenses.
 pip install -e 
 
 ## Usage
-python -m expense_tracker
+python -m expense-tracker

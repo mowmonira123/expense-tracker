@@ -1,0 +1,4 @@
+50.0,food
+30.0,transportation
+25.0,shopping
+10.0,food
