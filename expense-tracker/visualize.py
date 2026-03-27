@@ -13,3 +13,4 @@ def plot_expenses():
     
     plt.figure()
     plt.bar(labels, values)
+    plt.title("Expenses by Category")
